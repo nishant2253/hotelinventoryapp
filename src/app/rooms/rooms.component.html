@@ -1,0 +1,47 @@
+<!-- <p>Welcome to {{hotelname}}</p> -->
+<app-header></app-header>
+<div [hidden]="hiderooms">
+Number of Rooms:
+<div [ngStyle]="{'color': rooms.availableRooms ? 'steelblue' : 'red'}" 
+[innerText]="numberofrooms"></div>
+</div>
+{{rooms.availableRooms ?? 'no rooms'}}
+<div *ngIf="selectedRoom">
+    {{selectedRoom | json}}</div>
+    <div>
+        <button (click)="addRoom()">Add</button>
+    </div>
+<div *ngIf="hiderooms">
+    <app-rooms-list [rooms]="roomlist" [title]="title"
+    (selectedRoom) = selectRoom($event)></app-rooms-list>
+   
+    
+    
+    <!-- Rooms List
+    <table class="table">
+        <tr>
+            <th>index</th>
+            <th>even/odd</th>
+            <th>Room Number</th>
+            <th>Room Type</th>
+            <th>Amenties</th>
+            <th>Price</th>
+            <th>Check in</th>
+            <th>rating</th>
+        </tr>
+        <tr [ngClass]=" e ? 'even' : 'odd'" 
+        *ngFor="let room of roomlist | slice:0:3; let e =even ;let o=odd; let index=index">
+            <td>{{index | percent}}</td>
+            <td>{{e? "even" : "odd"}}</td>
+            <td>{{room.roomnumber}}</td>
+            <td>{{room.roomType}}</td>
+            <td>{{room.amenties | titlecase}}</td>
+            <td>{{room.price | currency:'INR'}}</td>
+            <td>{{room.checkintime | date :'dd/MM/yyyy'}}</td>
+            <td>{{room.rating | number :'1.0-0'}}</td>
+           
+        </tr>
+    </table> -->
+</div>
+<button (click)="toggle()">toggle!!</button>
+

@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "9b3b829f-3229-4a63-b8b8-996ef74655cd"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -75,7 +78,8 @@
               "browserTarget": "hotelinventoryapp:build:production"
             },
             "development": {
-              "browserTarget": "hotelinventoryapp:build:development"
+              "browserTarget": "hotelinventoryapp:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
